@@ -11,7 +11,7 @@ public class Main {
         Block genBlock = new Block(0, genTransactions);
 
         String[] twoTransactions = {"example transaction 3", "example transaction 4"};
-        Block blockTwo = new Block(0, twoTransactions);
+        Block blockTwo = new Block( genBlock.getBlockHash(), twoTransactions);
 
         System.out.println("Genesis block hash:" +  genBlock.getBlockHash());
         System.out.println("Second block hash" +  blockTwo.getBlockHash());

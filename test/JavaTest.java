@@ -13,7 +13,7 @@ public class JavaTest extends TestCase {
    // test method to add two values
    public void testAdd(){
       Block genBlock = new Block(0, genTransactions);
-      Block blockTwo = new Block(0, twoTransactions);
+      Block blockTwo = new Block(genBlock.getBlockHash(), twoTransactions);
       assertTrue(genBlock != blockTwo);
    }
 }
