@@ -30,4 +30,30 @@ public class Block {
     public int getBlockHash() {
         return this.blockHash;
     }
+
+    @Override
+    public boolean equals(final Object obj){
+        boolean result;
+        if((obj == null) || (getClass() != obj.getClass())){
+            result = false;
+        } 
+        else{
+            Block block = (Block) obj;
+            result = (this.previousHash == block.previousHash) 
+            &&  this.transactions == block.transactions;
+        } 
+    
+        return result;
+    } 
+    
+    @Override
+    public int hashCode(){
+        int result = 0; 
+        
+        result += Arrays.hashCode(this.transactions);
+
+        result += this.previousHash;
+
+        return result;
+    } 
 }
